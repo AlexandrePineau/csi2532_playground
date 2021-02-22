@@ -1,4 +1,4 @@
--- SCHEMA POUR LA QUESTION 1
+-- SCHEMA POUR LA QUESTION 5
 
 CREATE TABLE professeurs (
     ssn int,
@@ -11,10 +11,10 @@ CREATE TABLE cours (
 );
 
 CREATE TABLE teaches (
-    semester int,
-    ssn int,
-    courseid int,
-    PRIMARY KEY (ssn, courseid),
+    semesterid int,
+    ssn int NOT NULL,
+    courseid int NOT NULL,
+    PRIMARY KEY (semesterid),
     FOREIGN KEY (ssn) REFERENCES professeurs,
     FOREIGN KEY (courseid) REFERENCES cours
 );

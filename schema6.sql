@@ -1,8 +1,13 @@
--- SCHEMA POUR LA QUESTION 1
+-- SCHEMA POUR LA QUESTION 6
 
 CREATE TABLE professeurs (
     ssn int,
     PRIMARY KEY (ssn)
+);
+
+CREATE TABLE groups (
+    groupid int,
+    PRIMARY KEY (groupid)
 );
 
 CREATE TABLE cours (
@@ -12,9 +17,9 @@ CREATE TABLE cours (
 
 CREATE TABLE teaches (
     semester int,
-    ssn int,
+    groupid int,
     courseid int,
-    PRIMARY KEY (ssn, courseid),
-    FOREIGN KEY (ssn) REFERENCES professeurs,
+    PRIMARY KEY (groupid, courseid),
+    FOREIGN KEY (groupid) REFERENCES groups,
     FOREIGN KEY (courseid) REFERENCES cours
 );
