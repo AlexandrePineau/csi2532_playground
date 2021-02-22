@@ -105,6 +105,13 @@ CREATE TABLE groups (
     PRIMARY KEY (groupid)
 );
 
+CREATE TABLE member_of (
+    ssn int,
+    groupid int,
+    FOREIGN KEY (ssn) REFERENCES professeurs,
+    FOREIGN KEY (groupid) REFERENCES groups
+);
+
 CREATE TABLE cours (
     courseid int,
     PRIMARY KEY (courseid)
