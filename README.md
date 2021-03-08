@@ -6,3 +6,5 @@ Alexandre Pineau
 300066713
 
 # Lab 06
+## Schema Relationnel
+![alt text](schema_relationnel.png "Schema")
