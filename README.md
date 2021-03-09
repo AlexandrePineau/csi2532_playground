@@ -8,3 +8,5 @@ Alexandre Pineau
 # Lab 06
 ## Schema Relationnel
 ![alt text](schema_relationnel.png "Schema")
+
+## Requetes
