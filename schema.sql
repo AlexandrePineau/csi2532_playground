@@ -1,38 +1,39 @@
---Create athletes migration
-CREATE TABLE "leaderboard_migrated".athletes (
-  athlete_id int,
-  full_name varchar(128),
-  birthday date,
-  is_male boolean,
-  primary key (athlete_id)
+CREATE TABLE artists (
+ name VARCHAR(20),
+ birthplace VARCHAR(20),
+ style VARCHAR(20),
+ dateofbirth DATE,
+ PRIMARY KEY (name)
 );
-INSERT INTO "leaderboard_migrated".athletes
-  (athlete_id, full_name, birthday, is_male)
-VALUES
-  (1, 'Alexandre Pineau', '06-14-2000', true),
-  (2, 'Robert Naim', '05-13-1998', true),
-  (3, 'Pierre Rofail', '12-05-1960', true),
-  (4, 'CaitLin McNaughton', '07-28-2001', false),
-  (5, 'Alyssa Rose', '12-31-1999', false),
-  (6, 'Michelle Beaulieu', '10-01-1980', false);
 
---Create migrations migration
-CREATE TABLE "leaderboard_migrated".schema_migrations (
- migration varchar(255),
- migrated_at time,
- PRIMARY KEY (migration)
+CREATE TABLE customers (
+ id INTEGER,
+ name VARCHAR(20),
+ address VARCHAR(20),
+ amount numeric(8,2),
+ PRIMARY KEY (id)
 );
-INSERT INTO "leaderboard_migrated".schema_migrations 
-    (migration, migrated_at) 
-VALUES
-    ('20210222184100-create-athletes.sql', '2021-02-22 18:41:00'),
-    ('20210222185500-create-migrations.sql', '2021-02-22 18:55:00');
 
---Update athletes migration
-ALTER TABLE "leaderboard_migrated".athletes
-RENAME COLUMN is_male TO male_athlete;
+CREATE TABLE artworks (
+ title VARCHAR(20),
+ year INTEGER,
+ type VARCHAR(20),
+ price numeric(8,2),
+ artist_name VARCHAR(20),
+ PRIMARY KEY (title),
+ FOREIGN KEY(artist_name) REFERENCES artists(name)
+);
 
-INSERT INTO "leaderboard_migrated".schema_migrations 
-    (migration, migrated_at) 
-VALUES
-    ('20210222193500-update-athletes.sql', '2021-02-22 19:35:00'); 
+CREATE TABLE likeartists (
+ customer_id INTEGER,
+ artist_name VARCHAR(20),
+ PRIMARY KEY(artist_name, customer_id),
+ FOREIGN KEY (artist_name) REFERENCES artists(name),
+ FOREIGN KEY (customer_id) REFERENCES customers(id)
+);
+
+ALTER TABLE artists
+ADD COLUMN country varchar(100);
+
+ALTER TABLE customers
+ADD COLUMN rating integer CHECK (rating between 1 and 10);
