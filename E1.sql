@@ -1,14 +1,3 @@
-# Description
-Repo for CSI 2532 lab 07
-
-# Members
-Alexandre Pineau  
-300066713
-
-# Lab 07
-
-## E1)
-```sql
 INSERT INTO athletes
     (athlete_id, full_name, birthday, is_male)
 VALUES
@@ -55,16 +44,3 @@ VALUES
     (38, 'Rebekka Turene', '1968-09-05', false),
     (39, 'Audrey Blanchard', '1995-11-14', false),
     (40, 'Julia-Rose Lamoureux', '2004-02-22', false);
-```
-
-## E2
-```sql
-INSERT INTO competitions
-  (competition_id, competition_name, venue, start_time, end_time, days_long)
-VALUES
-  (1, 'Weight Lifting Contest', 'Ottawa', '2021-06-20 09:00:00', '2021-06-21 16:00:00', 2),
-  (2, 'Obstacle Course Races', 'Hamilton', '2021-08-01 08:00:00', '2021-08-01 17:30:00', 1),
-  (3, 'Pushup Marathon', 'Toronto', '2021-04-19 13:00:00', '2021-04-22 13:00:00', 4);
-  (4, 'Swim Until You Drown', 'Halifax', '2021-08-08 10:30:00', '2021-08-11 22:00:00', 3);
-  (5, 'Jumping For Joy', 'Montreal', '2021-10-02 06:00:00', '2021-10-02 16:00:00', 1);
-```
