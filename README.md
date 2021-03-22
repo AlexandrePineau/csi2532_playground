@@ -68,3 +68,6 @@ VALUES
   (4, 'Swim Until You Drown', 'Halifax', '2021-08-08 10:30:00', '2021-08-11 22:00:00', 3),
   (5, 'Jumping For Joy', 'Montreal', '2021-10-02 06:00:00', '2021-10-02 16:00:00', 1);
 ```
+
+## E3
+![alt text](E3.png "E3")
