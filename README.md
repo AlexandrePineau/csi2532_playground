@@ -17,5 +17,5 @@ CREATE TABLE clients (
 );
 ```
 
-## E3)
+## E3), E4)
 Voir `/public/api.php`
